@@ -40,13 +40,19 @@ class kansui:
 
             if get == :
                 self.off_wifi()
-
+            
             #返信専
             if get == :
                 self.wet()
 
             if get == :
-                self.temp
+                self.temp()
+
+            if get == :
+                self.clock_get()
+            
+            if get==:
+                self.clock.init()
 
         #返信の要求
         if self.s_i2c.anyRead():
@@ -74,4 +80,9 @@ class kansui:
 
     def off_wifi(self):
         kikupico.wifi.disconnect()
+
+    def clock_get(self):
+        kikupico.clock.get()
+
+    
         
